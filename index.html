@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Visita | Enzo Viola</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* CSS Variables for easy theme customization */
+        :root {
+            --primary-color: #0056b3; /* Um azul profissional */
+            --secondary-color: #f4f4f4;
+            --dark-color: #333;
+            --light-color: #fff;
+            --text-color: #555;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 900px;
+            margin: 20px auto;
+            background: var(--light-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 40px 20px;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--light-color);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .header .title {
+            font-weight: 300;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .header .subtitle {
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        
+        .contact-icons {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .contact-icons a {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-icons a:hover {
+            transform: scale(1.2);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+        }
+        
+        .about-text h4 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .about-text ul {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        .about-text ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .about-text ul li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .link-button {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .link-button:hover {
+            background-color: var(--primary-color);
+            color: var(--light-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .link-button i {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        .link-button:hover i {
+            color: var(--light-color);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #999;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .header {
+                flex-direction: row;
+                text-align: left;
+                padding: 50px;
+            }
+            .profile-pic {
+                width: 180px;
+                height: 180px;
+                margin-right: 40px;
+                margin-bottom: 0;
+            }
+            .contact-icons {
+                text-align: left;
+                margin-top: 15px;
+                margin-left: 0;
+            }
+             .link-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="card">
+        <header class="header">
+            <img src="https://cdn0030.qrcodechimp.com/qr/PROD/6466d0c8d38a7005067a13cd/fm/2_compressed_1_m.jpg" alt="Foto de Enzo Viola" class="profile-pic">
+            <div class="header-info">
+                <h1>Enzo Viola</h1>
+                <p class="title">Centro Universitário São Camilo</p>
+                <p class="subtitle"><strong>Graduando em Medicina, Sétimo Período</strong></p>
+                <div class="contact-icons">
+                    <a href="mailto:enzo.viola@aluno.saocamilo-sp.br" title="E-mail"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/+5511977199896" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section class="section">
+                <h2 class="section-title">Sobre Mim</h2>
+                <div class="about-text">
+                    <p>Estudante de Medicina no Centro Universitário São Camilo (CUSC) em São Paulo, buscando uma formação sólida e experiências enriquecedoras para contribuir no campo da medicina e áreas correlatas.</p>
+                    
+                    <h4><i class="fas fa-book-medical"></i> Ligas Acadêmicas</h4>
+                    <ul>
+                        <li>Presidente da Liga Acadêmica de Saúde Pública (2024 - )</li>
+                        <li>Vice-Presidente da Liga de Transplante de Órgãos e Tecidos (2023 - )</li>
+                        <li>Membro da Liga de Medicina Baseada em Evidências (2023 - )</li>
+                        <li>Membro da Liga de Clínica Médica (2023 - )</li>
+                        <li>Membro da Liga de Urologia (2023 - )</li>
+                    </ul>
+
+                    <h4><i class="fas fa-sitemap"></i> Gestão e Marketing</h4>
+                    <ul>
+                        <li>Diretor de Marketing no Centro Acadêmico Nader Wafae (2024 - )</li>
+                        <li>Diretor de Marketing na Comissão de Formatura da Turma XXVIII</li>
+                        <li>Membro do Marketing no IX COMUSC (Congresso Médico)</li>
+                    </ul>
+
+                    <h4><i class="fas fa-chalkboard-teacher"></i> Ensino e Voluntariado</h4>
+                    <ul>
+                        <li>Monitor na disciplina de Farmacologia do curso de Medicina.</li>
+                        <li>Voluntário no projeto de extensão Narizes de Plantão (Palhaço Hospitalar).</li>
+                    </ul>
+                    
+                    <h4><i class="fas fa-code"></i> Habilidades Técnicas</h4>
+                     <ul>
+                        <li>Programação em C, C++, Python e JavaScript.</li>
+                        <li>Conhecimentos em machine learning e TensorFlow.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h2 class="section-title">Links Profissionais</h2>
+                <div class="link-grid">
+                    <a href="https://www.linkedin.com/in/enzoviola/" target="_blank" class="link-button">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="http://lattes.cnpq.br/5254645820801372" target="_blank" class="link-button">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Currículo Lattes</span>
+                    </a>
+                     <a href="https://www.instagram.com/viola_enzo/" target="_blank" class="link-button">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://bit.ly/portfolioenzoviola" target="_blank" class="link-button">
+                        <i class="fas fa-palette"></i>
+                        <span>Portfólio de Logos</span>
+                    </a>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Documentos</h2>
+                <div class="link-grid">
+                     <a href="https://cdn03.qrcodechimp.com/qr/PROD/6466d0c8d38a7005067a13cd/fm/currculo_acadmico.pdf" target="_blank" class="link-button">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Acessar Currículo Acadêmico (PDF)</span>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2025 Enzo Viola. Todos os direitos reservados.</p>
+        </footer>
+    </main>
+
+</body>
+</html>
