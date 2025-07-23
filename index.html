@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartão de Visita | Enzo Viola</title>
+    <title>Currículo Lattes | Enzo Viola</title>
     
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,11 +17,12 @@
         /* CSS Variables for easy theme customization */
         :root {
             --primary-color: #0056b3; /* Um azul profissional */
-            --secondary-color: #f4f4f4;
+            --secondary-color: #f0f2f5; /* Um cinza mais suave */
             --dark-color: #333;
             --light-color: #fff;
             --text-color: #555;
             --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-color: #e0e0e0;
         }
 
         /* Basic Reset */
@@ -29,6 +30,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -40,7 +45,7 @@
         }
 
         .card {
-            max-width: 900px;
+            max-width: 950px;
             margin: 20px auto;
             background: var(--light-color);
             border-radius: 20px;
@@ -56,6 +61,7 @@
             background: var(--primary-color);
             color: var(--light-color);
             padding: 40px 20px;
+            position: relative;
         }
 
         .profile-pic {
@@ -80,33 +86,8 @@
             opacity: 0.9;
         }
         
-        .header .subtitle {
-            font-weight: 400;
-            font-size: 1.2rem;
-            margin-top: 5px;
-        }
-
-        .main-content {
-            padding: 30px;
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-        .section-title {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 15px;
-            border-bottom: 3px solid var(--primary-color);
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-        
         .contact-icons {
-            text-align: center;
-            margin-bottom: 30px;
+            margin-top: 15px;
         }
 
         .contact-icons a {
@@ -119,36 +100,105 @@
         .contact-icons a:hover {
             transform: scale(1.2);
         }
-        
-        .about-text p {
-            margin-bottom: 15px;
+
+        .main-content {
+            padding: 30px 40px;
         }
         
-        .about-text h4 {
-            font-size: 1.1rem;
-            color: var(--dark-color);
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
         }
 
-        .about-text ul {
-            list-style: none;
-            padding-left: 5px;
+        .section-title i {
+            margin-right: 15px;
+            font-size: 1.6rem;
+        }
+        
+        .resume-text {
+            text-align: justify;
         }
 
-        .about-text ul li {
-            margin-bottom: 8px;
-            padding-left: 20px;
+        .timeline {
             position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--border-color);
         }
 
-        .about-text ul li::before {
-            content: '✓';
-            color: var(--primary-color);
-            font-weight: bold;
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
             position: absolute;
-            left: 0;
+            left: -38px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid var(--light-color);
+        }
+
+        .timeline-period {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .timeline-subtitle {
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        .list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+        }
+        .list-item:last-child {
+            border-bottom: none;
+        }
+        .list-item i {
+            margin-right: 15px;
+            margin-top: 5px;
+            color: var(--primary-color);
         }
 
         .link-grid {
@@ -195,6 +245,10 @@
             padding: 20px;
             font-size: 0.9rem;
             color: #999;
+            background-color: #e9ecef;
+        }
+        .footer p {
+            margin: 0;
         }
 
         /* Responsive Design */
@@ -227,62 +281,130 @@
         <header class="header">
             <img src="https://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K1184842P6" alt="Foto de Enzo Viola" class="profile-pic">
             <div class="header-info">
-                <h1>Enzo Viola</h1>
-                <p class="title">Centro Universitário São Camilo</p>
-                <p class="subtitle"><strong>Graduando em Medicina, Sétimo Período</strong></p>
+                <h1>Enzo Marques Rodrigues Viola</h1>
+                <p class="title">Graduando em Medicina pelo Centro Universitário São Camilo</p>
                 <div class="contact-icons">
                     <a href="mailto:enzo.viola@aluno.saocamilo-sp.br" title="E-mail"><i class="fas fa-envelope"></i></a>
                     <a href="https://wa.me/+5511977199896" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="http://lattes.cnpq.br/5254645820801372" target="_blank" title="Currículo Lattes"><i class="ai ai-lattes"></i><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/0009-0009-8978-6604" target="_blank" title="ORCID iD"><i class="fab fa-orcid"></i></a>
                 </div>
             </div>
         </header>
 
         <div class="main-content">
-            <section class="section">
-                <h2 class="section-title">Sobre Mim</h2>
-                <div class="about-text">
-                    <p>Estudante de Medicina no Centro Universitário São Camilo (CUSC) em São Paulo, buscando uma formação sólida e experiências enriquecedoras para contribuir no campo da medicina e áreas correlatas.</p>
-                    
-                    <h4><i class="fas fa-book-medical"></i> Ligas Acadêmicas</h4>
-                    <ul>
-                        <li>Presidente da Liga Acadêmica de Saúde Pública (2024 - )</li>
-                        <li>Vice-Presidente da Liga de Transplante de Órgãos e Tecidos (2023 - )</li>
-                        <li>Membro da Liga de Medicina Baseada em Evidências (2023 - )</li>
-                        <li>Membro da Liga de Clínica Médica (2023 - )</li>
-                        <li>Membro da Liga de Urologia (2023 - )</li>
-                    </ul>
-
-                    <h4><i class="fas fa-sitemap"></i> Gestão e Marketing</h4>
-                    <ul>
-                        <li>Diretor de Marketing no Centro Acadêmico Nader Wafae (2024 - )</li>
-                        <li>Diretor de Marketing na Comissão de Formatura da Turma XXVIII</li>
-                        <li>Membro do Marketing no IX COMUSC (Congresso Médico)</li>
-                    </ul>
-
-                    <h4><i class="fas fa-chalkboard-teacher"></i> Ensino e Voluntariado</h4>
-                    <ul>
-                        <li>Monitor na disciplina de Farmacologia do curso de Medicina.</li>
-                        <li>Voluntário no projeto de extensão Narizes de Plantão (Palhaço Hospitalar).</li>
-                    </ul>
-                    
-                    <h4><i class="fas fa-code"></i> Habilidades Técnicas</h4>
-                     <ul>
-                        <li>Programação em C, C++, Python e JavaScript.</li>
-                        <li>Conhecimentos em machine learning e TensorFlow.</li>
-                    </ul>
-                </div>
-            </section>
             
             <section class="section">
-                <h2 class="section-title">Links Profissionais</h2>
+                <h2 class="section-title"><i class="fas fa-user-tie"></i>Resumo</h2>
+                <p class="resume-text">
+                    Graduando em Medicina pelo Centro Universitário São Camilo (CUSC) - SP, ligante da Liga Acadêmica de Medicina Baseada em Evidências (2023 - ). Participou como ligante da Liga Acadêmica de Clínica Médica (2023 - 2024), da Liga Acadêmica de Anatomia Clínica (2022 - 2023), da Liga Acadêmica de Reumatologia (2022 - 2023), da Liga Acadêmica de Medicina de Família e Comunidade (2022 - 2023) e da Liga Acadêmica de Imaginologia (2021 - 2023). Atuou como Diretor de Ensino da Liga Acadêmica de Saúde Pública (2022 - 2023), organizando eventos como o I Simpósio de Saúde Indígena e o I Simpósio Multidisciplinar, e posteriormente como Presidente da liga (2023 - 2024). Foi Vice-Presidente da Liga Acadêmica de Transplante de Órgãos e Tecidos (2023 - 2024), monitor da disciplina de Farmacologia (2023 - 2024), e membro da diretoria de Marketing na gestão do IX COMUSC (Congresso Médico Universitário São Camilo). Atualmente, integra a diretoria de Marketing da Comissão de Formatura da Turma XXVIII de Medicina e da gestão Meraki do Centro Acadêmico Nader Wafae (2024 - 2025), com experiência em administração de perfis e arte digital. Atuou como voluntário no projeto de extensão Narizes de Plantão (2023 - 2024), realizando visitas de palhaço no ambiente hospitalar. Participou como voluntário do projeto de iniciação científica PROGRAMA DE INICIAÇÃO CIENTIFICA E PROJETO DISCENTE EXTENSIONISTA VOLTADO PARA REFUGIADOS NO MUNICÍPIO DE SÃO PAULO (2022 - 2024). Atualmente, é bolsista de iniciação científica no projeto Avaliação da certeza da evidência de revisões sistemáticas sobre o uso de inteligências artificiais na saúde: estudo meta-epidemiológico (2025 - ). Possui experiência em programação nas linguagens C, C++, Python e JavaScript, com conhecimentos básicos de machine learning e treinamento de modelos no TensorFlow.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-university"></i>Formação Acadêmica</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-period">2021 - Atual</span>
+                        <h3 class="timeline-title">Graduação em Medicina</h3>
+                        <p class="timeline-subtitle">Centro Universitário São Camilo, USC, Brasil.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-period">2018 - 2020</span>
+                        <h3 class="timeline-title">Ensino Médio (2º grau)</h3>
+                        <p class="timeline-subtitle">Colégio Objetivo, OBJ, Brasil.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-period">2009 - 2017</span>
+                        <h3 class="timeline-title">Ensino Fundamental (1º grau)</h3>
+                        <p class="timeline-subtitle">Instituto Madre Mazzarello, IMM, Brasil.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-briefcase"></i>Atuação Profissional e Atividades</h2>
+                 <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-period">2023 - 2024</span>
+                        <h3 class="timeline-title">Monitor de Farmacologia</h3>
+                        <p class="timeline-subtitle">Centro Universitário São Camilo</p>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-period">02/2023 - 06/2023</span>
+                        <h3 class="timeline-title">Representante Discente, Turma A, Turma 28</h3>
+                        <p class="timeline-subtitle">Centro Universitário São Camilo</p>
+                    </div>
+                     <div class="timeline-item">
+                        <span class="timeline-period">08/2022 - 11/2022</span>
+                        <h3 class="timeline-title">Representante Discente, Turma A, Turma 28</h3>
+                        <p class="timeline-subtitle">Centro Universitário São Camilo</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-flask"></i>Projetos de Pesquisa</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-period">2022 - Atual</span>
+                        <h3 class="timeline-title">PROGRAMA DE INICIAÇÃO CIENTIFICA E PROJETO DISCENTE EXTENSIONISTA VOLTADO PARA REFUGIADOS NO MUNICIPIO DE SÃO PAULO</h3>
+                        <p class="timeline-description"><b>Situação:</b> Em andamento; <b>Natureza:</b> Pesquisa.<br><b>Descrição:</b> O programa se inicia com o braço pesquisa, onde a revisão dos conhecimentos que existem hoje sobre ser refugiado na cidade de São Paulo mostre um panorama geral que será aprofundado com uma pesquisa quali-quantitativa sobre este(s) grupos e posterior desenvolvimento de projetos extensionistas pautados na realidade e vivências destas pessoas.<br><b>Coordenadora:</b> Maria Elisa Gonzalez Manso.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-book-open"></i>Produção Bibliográfica</h2>
+                <ul class="list">
+                    <li class="list-item"><i class="fas fa-file-alt"></i><div>LIMA, G. S. ; VIEIRA, B. E. A. S. ; <b>VIOLA, E. M. R.</b> ; ROSA, V. S. ; BELTRAME, F. ; NASCIMENTO, L. . COMPARAÇÃO DE DIFERENTES TIPOS DE ENXERTO NO TRATAMENTO CIRÚRGICO DA DOENÇA DE PEYRONIE. In: XII Congresso Médico Universitário São Camilo, 2024, São Paulo.</div></li>
+                    <li class="list-item"><i class="fas fa-file-alt"></i><div>CAVALCANTI, M. R. ; CAMPOS, T. B. ; TROVARELLI, L. ; <b>VIOLA, E. M. R.</b> ; MARANGONI, G. E. ; FREITAS, L. V. L. ; BORBA, M. N. . CONFLITOS BIOÉTICOS NA VENDA E COMERCIALIZAÇÃO DE ÓRGÃOS PARA TRANSPLANTE. In: XII Congresso Médico Universitário São Camilo, 2024, São Paulo.</div></li>
+                    <li class="list-item"><i class="fas fa-file-alt"></i><div>AZEVEDO, L. K. ; <b>VIOLA, E. M. R.</b> ; RODRIGUES, J. L. ; BARROS, M. J. R. . BEBÊ MEDICAMENTO: LIMITES ÉTICOS E JURÍDICOS. In: XV Congresso Brasileiro de Bioética, 2023, Vitória.</div></li>
+                    <li class="list-item"><i class="fas fa-file-alt"></i><div>AZEVEDO, L. K. ; <b>VIOLA, E. M. R.</b> ; MASCARENHAS, I. L. . PANORAMA DO ORDENAMENTO JURÍDICO BRASILEIRO ACERCA DAS DIRETIVAS ANTECIPADAS DE VONTADE. In: XV Congresso Brasileiro de Bioética, 2023, Vitória.</div></li>
+                    <li class="list-item"><i class="fas fa-file-alt"></i><div>OTSUKA, M. ; VERLANGIERI, H. A. R. ; ALVES, C. S. ; <b>VIOLA, E. M. R.</b> . IMPACTO DAS INTERNAÇÕES POR VÍRUS SINCICIAL RESPIRATÓRIO EM HOSPITAL PÚBLICO PEDIÁTRICO DE ALTA COMPLEXIDADE EM SÃO PAULO, ENTRE JANEIRO DE 2021 E MAIO DE 2023. In: XXII Congresso Brasileiro de Infectologia Pediátrica, 2023, Curitiba.</div></li>
+                    <li class="list-item"><i class="fas fa-file-alt"></i><div>SILVA, B. M. ; GONÇALVES, B. R. ; <b>VIOLA, E. M. R.</b> ; BIBO, I. S. ; LEITE, L. C. ; FIGUEIREDO, T. A. A. ; VARELA, F. R. A. . A IMPORTÂNCIA DA TRIAGEM PRECOCE DO TRANSTORNO DO ESPECTRO AUTISTA NA ATENÇÃO PRIMÁRIA. In: Congresso Médico Universitário São Camilo, 2023, São Paulo.</div></li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-calendar-check"></i>Eventos e Participações</h2>
+                 <ul class="list">
+                    <li class="list-item"><i class="fas fa-calendar-day"></i><div><b>2022:</b> Congresso Acadêmico UNIFESP 2022: Universidade, Conhecimento e Democracia.</div></li>
+                    <li class="list-item"><i class="fas fa-calendar-day"></i><div><b>2022:</b> Curso Introdutório da Liga Acadêmica de Anestesiologia do Centro Universitário São Camilo.</div></li>
+                    <li class="list-item"><i class="fas fa-calendar-day"></i><div><b>2022:</b> I Curso Introdutório da Liga Acadêmica de Imagenologia Médica do Centro Universitário São Camilo.</div></li>
+                    <li class="list-item"><i class="fas fa-calendar-day"></i><div><b>2022:</b> III Curso Introdutório da Liga Acadêmica de Cuidados Paliativos do Centro Universitário São Camilo.</div></li>
+                    <li class="list-item"><i class="fas fa-calendar-day"></i><div><b>2021:</b> Curso de Acesso às Bases de Dados - Medicina - Edição 2021/1.</div></li>
+                    <li class="list-item"><i class="fas fa-calendar-day"></i><div><b>2021:</b> III Curso Introdutório da Liga Acadêmica de Imaginologia do Centro Universitário São Camilo - Neuroimagem na Prática Clínica.</div></li>
+                    <li class="list-item"><i class="fas fa-robot"></i><div><b>2020:</b> RoboCupJR. (Olimpíada) - Equipe Defenders, participação na Categoria Rescue Maze.</div></li>
+                    <li class="list-item"><i class="fas fa-robot"></i><div><b>2019:</b> LARC - Latin American Robotics Competition. (Olimpíada) - Equipe Defenders, participação na Categoria Rescue Maze.</div></li>
+                    <li class="list-item"><i class="fas fa-laptop-code"></i><div><b>2019:</b> Olimpíada Brasileira de Informática. (Competidor).</div></li>
+                    <li class="list-item"><i class="fas fa-dna"></i><div><b>2018:</b> Olimpíada Brasileira de Biologia. (Competidor).</div></li>
+                    <li class="list-item"><i class="fas fa-laptop-code"></i><div><b>2018:</b> Olimpíada Brasileira de Informática. (Competidor).</div></li>
+                </ul>
+            </section>
+
+             <section class="section">
+                <h2 class="section-title"><i class="fas fa-trophy"></i>Prêmios e Títulos</h2>
+                <ul class="list">
+                    <li class="list-item"><i class="fas fa-award"></i><div><b>2020:</b> 2º lugar na Categoria Rescue Maze, Estrutura de Código, RoboCupJR.</div></li>
+                    <li class="list-item"><i class="fas fa-award"></i><div><b>2020:</b> Premiação Best Team Spirit Award na Categoria Rescue Maze, RoboCupJR.</div></li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-language"></i>Idiomas</h2>
+                 <ul class="list">
+                    <li class="list-item"><i class="fas fa-comment-dots"></i><div><b>Inglês:</b> Compreende Bem, Fala Razoavelmente, Lê Bem, Escreve Bem.</div></li>
+                    <li class="list-item"><i class="fas fa-comment-dots"></i><div><b>Espanhol:</b> Compreende Razoavelmente, Fala Pouco, Lê Razoavelmente, Escreve Razoavelmente.</div></li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title"><i class="fas fa-link"></i>Links e Documentos</h2>
                 <div class="link-grid">
                     <a href="https://www.linkedin.com/in/enzoviola/" target="_blank" class="link-button">
                         <i class="fab fa-linkedin"></i>
                         <span>LinkedIn</span>
-                    </a>
-                    <a href="http://lattes.cnpq.br/5254645820801372" target="_blank" class="link-button">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Currículo Lattes</span>
                     </a>
                      <a href="https://www.instagram.com/viola_enzo/" target="_blank" class="link-button">
                         <i class="fab fa-instagram"></i>
@@ -292,22 +414,17 @@
                         <i class="fas fa-palette"></i>
                         <span>Portfólio de Logos</span>
                     </a>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">Documentos</h2>
-                <div class="link-grid">
-                     <!-- AQUI FOI FEITA A ALTERAÇÃO -->
                      <a href="currculo_acadmico.pdf" target="_blank" class="link-button">
                         <i class="fas fa-file-pdf"></i>
-                        <span>Acessar Currículo Acadêmico (PDF)</span>
+                        <span>Acessar Currículo Completo (PDF)</span>
                     </a>
                 </div>
             </section>
+
         </div>
         <footer class="footer">
-            <p>&copy; 2025 Enzo Viola. Todos os direitos reservados.</p>
+            <p>Última atualização do currículo em 27/06/2025</p>
+            <p>&copy; 2025 Enzo Marques Rodrigues Viola. Todos os direitos reservados.</p>
         </footer>
     </main>
 
